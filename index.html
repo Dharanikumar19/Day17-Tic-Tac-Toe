@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tak Toe Game</title>
+</head>
+<body>
+    <script>
+       
+    var currentPlayer = 'X';
+    var myDiv1 = document.createElement('div');
+            myDiv1.style.height = '300px';
+            myDiv1.style.width = '300px';
+            myDiv1.style.textAlign = 'center';
+            myDiv1.style.fontSize = '52px';
+            myDiv1.style.color = 'white';
+            myDiv1.style.display = 'flex';
+            myDiv1.style.flexDirection = 'row';
+            myDiv1.style.flexWrap = 'wrap';
+            myDiv1.style.marginLeft = '600px';
+            myDiv1.style.marginTop = '200px';
+            
+            for(var index = 1; index<=9; index++){
+                var box = document.createElement('div');
+                box.style.height = '100px';
+                box.style.width = '32%';
+                box.style.marginRight = '2px';
+                box.style.backgroundColor = 'purple';
+                box.style.border = '1px solid black';
+
+                box.setAttribute('id',index);
+                box.addEventListener('click',function() {
+                if(this.innerText.length == 0){
+                if(currentPlayer == 'X'){
+                    this.innerText = currentPlayer;
+                    currentPlayer = '0';
+                }else{
+                    this.innerText = currentPlayer;
+                    currentPlayer = 'X';
+                }
+            }
+            })
+            myDiv1.appendChild(box);
+            }
+            document.body.appendChild(myDiv1);
+            
+
+    </script>
+
+</body>
+</html>
